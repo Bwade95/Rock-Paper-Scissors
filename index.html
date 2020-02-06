@@ -4,90 +4,90 @@
 </head>
 <body>
     <script>
-        let round = 1
-        let playerScore = 0
-        let computerScore = 0
-        let playerSelection
-        let computerSelection
+        let round = 1;
+        let playerScore = 0;
+        let computerScore = 0;
+        let playerSelection;
+        let computerSelection;
 
-        const rps = ["rock", "paper", "scissors"]
+        const rps = ["rock", "paper", "scissors"];
            
         function computerPlay() {           
-            computerSelection = rps[Math.floor(Math.random() * rps.length)]        
+            computerSelection = rps[Math.floor(Math.random() * rps.length)];        
         }
         
         function playRound(playerSelection, computerSelection) {            
-            playerSelection = playerSelection.toLowerCase()
-            computerSelection = computerSelection.toLowerCase()
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = computerSelection.toLowerCase();
 
-            console.log("Round: " + round)
-            console.log('Player picked ' + playerSelection)
-            console.log('Computer picked ' + computerSelection) 
+            console.log("Round: " + round);
+            console.log('Player picked ' + playerSelection);
+            console.log('Computer picked ' + computerSelection); 
             
             if (playerSelection == 'rock' && computerSelection == 'rock') {
-                round++
-                console.log("It's a tie. Score: " + playerScore + " to " + computerScore + ".")
+                round++;
+                console.log("It's a tie. Score: " + playerScore + " to " + computerScore + ".");
             }
             else if (playerSelection == 'rock' && computerSelection == 'paper') {
-                computerScore++
-                round++
-                console.log("You lose. Score: " + playerScore + " to " + computerScore + ".")
+                computerScore++;
+                round++;
+                console.log("You lose. Score: " + playerScore + " to " + computerScore + ".");
             }
             else if (playerSelection == 'rock' && computerSelection == 'scissors') 
             {
-                playerScore++
-                round++
-                console.log("You win. Score: " + playerScore + " to " + computerScore + ".")
+                playerScore++;
+                round++;
+                console.log("You win. Score: " + playerScore + " to " + computerScore + ".");
             }
 
             if (playerSelection == 'paper' && computerSelection == 'rock') {
-                round++
-                console.log("You win. Score: " + playerScore + " to " + computerScore + ".")
+                round++;
+                console.log("You win. Score: " + playerScore + " to " + computerScore + ".");
             }
             else if (playerSelection == 'paper' && computerSelection == 'paper') {
-                computerScore++
-                round++
-                console.log("It's a tie. Score: " + playerScore + " to " + computerScore + ".")
+                computerScore++;
+                round++;
+                console.log("It's a tie. Score: " + playerScore + " to " + computerScore + ".");
             }
             else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-                playerScore++
-                round++
-                console.log("You Lose. Score: " + playerScore + " to " + computerScore + ".")
+                playerScore++;
+                round++;
+                console.log("You Lose. Score: " + playerScore + " to " + computerScore + ".");
             }
 
             if (playerSelection == 'scissors' && computerSelection == 'rock') {            
-                round++
-                console.log("Tou lose. Score: " + playerScore + " to " + computerScore + ".")
+                round++;
+                console.log("Tou lose. Score: " + playerScore + " to " + computerScore + ".");
             }
             else if (playerSelection == 'scissors' && computerSelection == 'paper') {          
-                computerScore++
-                round++
-                console.log("You win. Score: " + playerScore + " to " + computerScore + ".")
+                computerScore++;
+                round++;
+                console.log("You win. Score: " + playerScore + " to " + computerScore + ".");
             }
             else if (playerSelection == 'scissors' && computerSelection == 'scissors') {           
-                playerScore++
-                round++
-                console.log("It's a tie. Score: " + playerScore + " to " + computerScore + ".")
+                playerScore++;
+                round++;
+                console.log("It's a tie. Score: " + playerScore + " to " + computerScore + ".");
             }
         }
 
         function game() {        
             while(round <= 5) {           
-                playerSelection = prompt("Rock, Paper or Scissors?")
-                computerPlay()
-                playRound(playerSelection, computerSelection)
+                playerSelection = prompt("Rock, Paper or Scissors?");
+                computerPlay();
+                playRound(playerSelection, computerSelection);
             }
 
             if (playerScore > computerScore) {            
-                console.log("Congratulations you win the game!")                   
+                console.log("Congratulations you win the game!");                   
             }
             else if (computerScore > playerScore) {           
-                console.log("Unlucky! You lost! Better luck next time!")                   
+                console.log("Unlucky! You lost! Better luck next time!");                   
             }
             else {            
-                console.log("You both drew! Good game!")                     
+                console.log("You both drew! Good game!");                     
             }      
         }
-        game()                             
+        game();                            
     </script>
 </body>
